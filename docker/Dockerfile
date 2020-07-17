@@ -2,7 +2,7 @@ FROM alpine:edge
 ARG packageId
 
 COPY ${packageId} /opt/testcafe/${packageId}
-COPY docker/testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
+COPY docker/testcafedocker.sh /opt/testcafe/docker/testcafe-docker.sh
 
 ENV ALPINE_REPOS="\
  --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/\
