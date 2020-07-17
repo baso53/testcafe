@@ -17,6 +17,7 @@ RUN apk --no-cache $ALPINE_REPOS upgrade && \
  libevent nodejs npm chromium firefox-esr xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
 
 RUN npm install -g /opt/testcafe/${packageId} && \
+ npm install -g testcafe-reporter-html && \
  npm cache clean --force && \
  rm -rf /tmp/* && \
  chmod +x /opt/testcafe/docker/testcafe-docker.sh && \
