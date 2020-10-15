@@ -1,7 +1,9 @@
 FROM testcafe/testcafe
+
 USER root
 
-RUN  npm install -g testcafe-reporter-html request totp-generator --save-dev
-RUN npm i -g artillery --ignore-scripts
-EXPOSE 1337 1338
-ENTRYPOINT ["/opt/testcafe/docker/testcafe-docker.sh"]
+ENV NODE_PATH=/opt:/usr/lib/node_modules:/opt/testcafe/node_modules
+
+RUN cd /opt/testcafe && npm install testcafe-reporter-html request totp-generator
+
+USER user
